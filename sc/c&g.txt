@@ -1,0 +1,35 @@
+Cut
+
+$echo I like cricket | cut -b 1
+
+$ cut –f 2,7 empinfo
+
+$cut –f 2-7 empinfo
+
+$cut –f 2,7 –d”:” empinfo
+
+$ cut –c 1-15 empinfo
+
+
+
+
+grep
+
+$ grep picture newsfile
+
+$ grep [Rr]ebecca myfile
+
+$ grep b??k myfile
+
+$grep –v a* myfile
+
+
+
+
+Option Meaning
+-i Ignores case while searching.
+-l Returns only file names containing a match, without quoting the text
+-n Returns line number of matched text, as well as the text itself.
+-s Suppresses error messages
+-v Returns lines that do not match the text.
+-c Returns only the number of matches, without quoting the text.

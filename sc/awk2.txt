@@ -1,0 +1,53 @@
+AWK Commands:
+
+1. Print fields 2 and 3 for lines containing 'a':
+   $ awk '/a/ {print $2 "\t" $3}' employee.txt
+
+2. Print whole lines containing 'a':
+   $ awk '/a/{print $0}' employee.txt
+
+3. Print whole lines containing 'a' (same as previous without specifying `print $0`):
+   $ awk '/a/' employee.txt
+
+4. Print lines where the length of the second field ($2) is greater than 5:
+   $ awk 'length($2) > 5' employee.txt
+
+5. Print lines with more than 2 fields:
+   $ echo -e "One Two\nOne Two Three\nOne Two Three Four" | awk 'NF > 2'
+
+Regular Expressions:
+
+6. Using `match` function to find the position of the first occurrence of "Thre" in "One Two Three":
+   $ awk 'BEGIN { if (match("One Two Three", "Thre")) { print RSTART } }'
+
+7. Match lines containing "f.n" (any single character between 'f' and 'n'):
+   $ echo -e "cat\nbat\nfun\nfin\nfan" | awk '/f.n/'
+
+8. Match lines starting with "The":
+   $ echo -e "This\nThat\nThere\nTheir\nthese" | awk '/^The/'
+
+9. Match lines ending with "n":
+   $ echo -e "knife\nknow\nfun\nfin\nfan\nnine" | awk '/n$/'
+
+10. Match lines containing either "Call" or "Tall," but not "Ball":
+    $ echo -e "Call\nTall\nBall" | awk '/[CT]all/'
+
+11. Match lines containing "all" but not starting with "C" or "T" (negating the set with `^`):
+    $ echo -e "Call\nTall\nBall" | awk '/[^CT]all/'
+
+12. Match lines containing either "Call" or "Ball":
+    $ echo -e "Call\nTall\nBall\nSmall\nShall" | awk '/Call|Ball/'
+
+13. Match "Colour" or "Color" (making 'u' optional with `?`):
+    $ echo -e "Colour\nColor" | awk '/Colou?r/'
+
+14. Match "ca," "cat," "catt," and more (zero or more occurrences of 't'):
+    $ echo -e "ca\ncat\ncatt" | awk '/cat*/'
+
+15. Match lines containing "Apple Juice" or "Apple Cake" using parentheses and `|`:
+    $ echo -e "Apple Juice\nApple Pie\nApple Tart\nApple Cake" | awk '/Apple (Juice|Cake)/'
+
+Index Function:
+
+16. Use the `index` function to find the position of the first occurrence of "an" in "peanut":
+    $ awk 'BEGIN {print index("peanut", "an")}'

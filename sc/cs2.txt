@@ -1,0 +1,296 @@
+List
+Syntax: ls [OPTIONS] [FILE/DIRECTORY]
+
+
+
+Print Working Directory
+Syntax: pwd
+
+
+
+Change Directory
+Syntax: cd [DIRECTORY]
+
+
+
+Super user do
+Syntax: sudo [COMMAND]
+
+
+
+Text Editor
+Syntax: nano [FILE]
+
+
+
+Who Am I
+Syntax: whoami
+
+
+
+User ID
+Syntax: id
+
+
+
+System Information
+Syntax: uname [OPTIONS]
+
+
+
+Manual Pages
+Syntax: man [COMMAND]
+
+
+Curl
+Syntax: curl [OPTIONS] [URL]
+
+
+
+Date
+Syntax: date [OPTIONS]
+
+
+
+Find
+Syntax: find [DIRECTORY] [OPTIONS]
+
+
+
+Make Directory
+Syntax: mkdir [DIRECTORY]
+
+
+
+Remove Directory
+Syntax: rmdir [DIRECTORY]
+
+
+
+Process Status
+Syntax: ps [OPTIONS]
+
+
+
+Table of Processes
+Syntax: top
+
+
+
+Disk Us
+age
+Syntax: df [OPTIONS] [FILESYSTEM]
+
+
+
+Create Empty File
+Syntax: touch [FILE]
+
+
+
+Copy
+Syntax: cp [OPTIONS] [SOURCE] [DESTINATION]
+
+
+
+Move
+Syntax: mv [OPTIONS] [SOURCE] [DESTINATION]
+
+
+
+Remove
+Syntax: rm [OPTIONS] [FILE/DIRECTORY]
+
+
+
+Remove nonempty directory
+Syntax: rm -r [DIRECTORY]
+
+
+
+Change Mode
+Syntax: chmod [OPTIONS] [MODE] [FILE]
+
+
+
+Concatenate
+Syntax: cat [FILE]
+
+
+
+More
+Syntax: more [FILE]
+
+
+
+Head
+Syntax: head [OPTIONS] [FILE]
+
+
+
+Tail
+Syntax: tail [OPTIONS] [FILE]
+
+
+
+Echo
+Syntax: echo [ARGUMENTS]
+
+
+
+Sort
+Syntax: sort [OPTIONS] [FILE]
+
+
+
+Unique
+Syntax: uniq [OPTIONS] [FILE]
+
+
+
+Word Count
+Syntax: wc [OPTIONS] [FILE]
+
+
+
+Grep
+Syntax: grep [OPTIONS] PATTERN [FILE]
+
+
+
+Paste
+Syntax: paste [OPTIONS] [FILE]
+
+
+
+Cut
+Syntax: cut [OPTIONS] [FILE]
+
+
+
+Tar
+Syntax: tar [OPTIONS] [FILE]
+
+
+
+
+Zip
+Syntax: zip [OPTIONS] [ARCHIVE] [FILE]
+
+
+
+Unzip
+Syntax: unzip [OPTIONS] [ARCHIVE]
+
+
+
+Hostname
+Syntax: hostname
+
+
+
+Ping
+Syntax: ping [OPTIONS] [HOST]
+
+
+
+Ifconfig
+Syntax: ifconfig [INTERFACE]
+
+
+
+IP
+Syntax: ip [OPTIONS] [COMMAND]
+
+
+
+Shebang
+Syntax: #!/bin/[SHELL]
+
+
+
+Pipe
+Syntax: filter1 | filter2
+
+
+
+Locate Executable
+Syntax: which [EXECUTABLE]
+
+
+
+Bash
+Syntax: bash [SCRIPT]
+
+
+
+Set
+Syntax: set [OPTION]
+
+
+
+Define Variable
+Syntax: [VARIABLE_NAME]=[VALUE]
+
+
+
+Read
+Syntax: read [VARIABLE]
+
+
+
+Env
+Syntax: env
+
+
+
+Export
+Syntax: export [VARIABLE]
+
+
+
+
+Crontab
+Syntax: crontab [OPTIONS]
+
+
+
+
+Sort Command Basics:
+- The sort command is used to sort the contents of a file.
+
+Simple Sorting:
+- $ sort myfile
+
+Combining with Standard Input:
+- $ sort - myfile
+
+Sorting from Standard Input:
+- $ sort
+
+Working with Fields:
+- Sort is particularly useful for files that are essentially databases or have information organized in fields. Fields are groups of characters separated by a predetermined delimiter, often a space or tab, which separates different chunks of information.
+
+Common Sort Options:
+- -b: Ignores leading spaces and tabs.
+- -c: Checks if files are already sorted. If they are, sort does nothing.
+- -d: Sorts in dictionary order (ignores punctuation).
+- -f: Ignores case.
+- -m: Merges files that have already been sorted.
+- -n: Sorts in numeric order.
+- -o file: Stores output in the specified file.
+- -r: Reverses the sort.
+- -t c: Separates fields with the specified character (default is tab).
+
+Examples:
+- To sort numerically, use -n:
+  $ sort -n myfile
+
+- To reverse the numeric sort, use -nr:
+  $ sort -nr myfile
+
+- To create another file with the same content but a different name, use -o:
+  $ sort -o newfilename myfile
+
+- To sort based on a custom field delimiter, use -t:
+  $ sort -t "|" -k 2 myfile

@@ -1,0 +1,46 @@
+Basic AWK Commands:
+1. Print the entire line:
+   $ awk '{print $0}' file.txt
+
+2. Print the first field:
+   $ awk '{print $1}' file.txt
+
+3. Print line numbers:
+   $ awk '{print NR, $0}' file.txt
+
+4. Use NF (Number of Fields) to display the last field:
+   $ awk '{print $1, $NF}' file.txt
+
+Input Field Separators:
+1. Set a custom input field separator (e.g., using a colon as a separator):
+   $ awk -F: '{print $1, $6}' /etc/passwd
+
+Adding Patterns:
+1. Filter and print only regular user accounts (UID >= 1000):
+   $ awk -F: '$3 >= 1000 {print $1, $6}' /etc/passwd
+
+Reading the Script from a File:
+1. Create an AWK script in a file (e.g., testfile1) and execute it with the -f option:
+   $ awk -F: -f testfile1 /etc/passwd
+
+Initialization and Final Action:
+1. Use the BEGIN and END patterns for initialization and final actions:
+   $ awk 'BEGIN {print "Initialization"} {print $1, $2, $6} END {print "Final Action"}' file.txt
+
+Find Employees Based on Criteria:
+1. Print employees with employee IDs greater than 200:
+   $ awk '$1 > 200' employee.txt
+
+2. Print employees in the Technology department:
+   $ awk '$4 ~ /Technology/' employee.txt
+
+3. Count the number of employees in the Technology department:
+   $ awk 'BEGIN {count=0} $4 ~ /Technology/ {count++} END {print "Number of employees in Technology Dept =", count}' employee.txt
+
+Using Multiple Commands:
+1. Run multiple commands within AWK (e.g., change the second word and print the entire line):
+   $ echo "Hello John" | awk '{$2="Andrew"; print $0}
+
+Structured Commands:
+1. Use if-else conditional statements in AWK to process data based on conditions:
+   $ awk '{if($1 > 30) { x = $1 * 3; print x } else { x = $1 / 2; print x }}' testfile

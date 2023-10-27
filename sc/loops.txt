@@ -1,0 +1,128 @@
+if:
+
+a=10 
+b=20
+if [ $a -eq $b ] 
+then
+echo "a is equal to b"
+
+elif [ $a -gt $b ]
+then
+echo "a is greater than b"
+
+elif [ $a -lt $b ]
+then
+echo "a is less than b"
+
+else
+echo "None of the condition met"
+fi
+
+
+
+
+
+
+while:
+
+ex:
+#! /bin/bash 
+
+count=5
+while [ $count -le 15 ] 
+do
+echo $count
+#(($count++))
+count=`expr $count + 1`
+done
+
+
+
+
+for:
+
+ex1:
+
+for i in 1 2 3 4 5 
+do
+echo "Welcome $i times" 
+done
+
+
+
+ex2: 
+#! /bin/bash #for loops
+
+for item in * 
+do
+if [ -f $item ]
+then
+echo $item 
+fi
+done
+
+
+
+ex3:
+
+for i in {0..10..2}
+do
+echo “welcome $i times ” 
+done
+
+
+
+ex4:
+
+for (( c=1;c<=5;c++)) 
+do
+echo “welcome $c times ” 
+done
+
+
+
+ex5:
+
+n=10
+while [$n -le 20]
+do
+echo “welcome” 
+n=$((n+1))
+done
+
+
+
+
+switch:
+
+FRUIT="kiwi" 
+case "$FRUIT" in
+"apple") echo "Apple pie is quite tasty.";;
+"banana") echo "I like banana nut bread.";;
+"kiwi") echo "New Zealand is famous for kiwi.";;
+*) echo "unkown fruit";;
+esac
+
+
+
+
+
+
+
+
+my_array=()
+
+echo "input elemetns for array('done' for finished)"
+
+while true
+do
+read -p "> " element
+if [ $element == "done"]
+then
+break
+fi
+
+my_array+=$element
+
+echo "elements of array : ${my_array[@]}"
+

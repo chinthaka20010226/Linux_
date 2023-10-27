@@ -1,0 +1,46 @@
+Expression:
+
+
+
+
+$((expression))
+$(( n1+n2 ))
+$(( n1/n2 ))
+$(( n1-n2 ))
+
+
+
+
+$ expr 1 + 3
+$ expr 2 - 1
+$ expr 10 / 2
+$ expr 20 % 3
+$ expr 10 \* 3
+$ echo `expr 6 + 3`
+
+
+
+
+examples:
+#!/bin/bash 
+
+a=2
+echo $((a+3))
+b=$((2*++a)) 
+echo $b
+echo $(( a*b ))
+
+
+
+
+
+Read:
+
+#!/bin/bash
+echo “Enter name:” 
+read –a names
+echo “Name: ${name[0]}, ${name[1]}, ${name[2]}”
+
+
+
+

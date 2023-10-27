@@ -1,0 +1,94 @@
+awk -F ":" '{total+=NF}; END {print total}' abc.txt
+
+
+awk '{print "abc"}'
+
+
+awk '{print NR,$0}' abc.txt
+
+
+#first and last
+awk '{print $1,$NF}' abc.txt
+
+
+awk '{print NF}' abc.txt
+
+
+date |awk 'OFS="/" {print $1,$2}'
+
+
+echo "hello A B C D" |awk 'OFS="__" {print $1,$2,$3}'
+
+
+awk '{print;}' abc.txt                     same
+awk '{print $0}' abc.txt                   same
+
+
+awk -F":" '{print $1,$3}' abcd.txt
+
+
+awk 'BEGIN{print "this is begin"}{print $1,$2}END{print "----------End of the report----------"}' abc.txt
+
+
+
+awk 'BEGIN{print "ID\tNAME\tPOSITION"}{print $1,"\t",$2,"\t",$3}END{print "-----------end-----------"}' abc.txt
+
+
+awk '$1>200' abc.txt
+
+
+awk '$2 ~"athomas"' abc.txt
+
+
+echo "hello ABC" |awk '{$2="andrew";print $0}'      same
+echo "hello ABC" |awk '{$2="aa"}{print $0}'         same
+
+
+awk '{if($1>10)print $1}' numbers.txt
+
+
+awk 'length($2)>5' abc.txt
+
+
+awk '{length($2)>4;print $2}' abc.txt
+
+
+awk 'BEGIN{count=0}{if($2 ~/athomas/)count++}END{print count}' abc.txt
+
+
+echo -e "aaaa aaaa aaa\nbbb bbb bbb bbb bbbb\nccc ccc ccc  cccc ccc " |awk 'NF>3'
+
+
+awk 'BEGIN{if(match("hello world abcasd","or")){print RSTART}}'
+
+
+echo -e "abcd asd adft" |awk '/a.d/'
+
+
+echo -e "hello asdsd \n asdsad\n adasd" |awk '/^hel/'
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+awk: line 1: syntax error at or near if
+
+awk: line 1: syntax error at or near if
+
+awk: line 1: syntax error at or near if
+
+awk: line 1: syntax error at or near if
+awk: line 1: syntax error at or near if
+awk: line 1: syntax error at or near if
+awk: line 1: syntax error at or near if
+awk: line 1: syntax error at or near if
+awk: line 1: syntax error at or near ifawk: line 1: syntax error at or near if
+awk: line 1: syntax error at or near if
+awk: line 1: syntax error at or near if
+awk: line 1: syntax error at or near ifawk: line 1: syntax error at or near if
+awk: line 1: syntax error at or near if
+
